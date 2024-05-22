@@ -15,7 +15,8 @@ def filterlines(lines):
     return [line for line in lines if line[0] != '*']
 
 
-def mars_atm(h, data):
+def mars_atm(h_m, data):
+    h = h_m / 1000
     R = 191.84
     h_keys = list(data.keys())
     n = 0
