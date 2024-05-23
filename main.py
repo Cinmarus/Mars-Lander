@@ -4,8 +4,8 @@ from marsatm import *
 from physics import *
 
 h, v, theta = 20000, 262, -20
-h_t = 5200
-m_f = 424
+h_t = 1800
+m_f = 80
 dt = 0.1
 time = 0
 dv = 0
