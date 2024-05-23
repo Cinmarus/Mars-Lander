@@ -4,9 +4,9 @@ from marsatm import *
 from physics import *
 
 h, v, theta = 20000, 262, -20
-h_t = 4900
-m_f = 425
-dt = 1
+h_t = 5200
+m_f = 424
+dt = 0.1
 time = 0
 dv = 0
 atm_data = marsinit()
@@ -14,11 +14,9 @@ thruster = False
 
 position_x = [0]
 position_y = [20000]
-
 time_lst = [0]
 v_lst = [262]
 theta_lst = [-20]
-
 m_dot_lst = [0]
 
 
@@ -36,7 +34,7 @@ while y > 0:
     m = calc_mass(m_f)
     m_f, m_dot = calc_fuel(m_f, dt, v_y, m_zfw, thruster)
     thrust = calc_thrust(m_dot)
-    dv = calc_dv(thrust, drag, m_f)
+    dv = calc_dv(thrust, drag, m_f, dt)
     v_x, v_y, v, theta = velocity(v, theta, dv, dt)
     x, y = calc_position(x, y, v_x, v_y, dt)
     if y > 0:
