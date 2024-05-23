@@ -1,6 +1,3 @@
-from math import sin, cos, tan, pi
-
-from marsatm import *
 from physics import *
 
 h, v, theta = 20000, 262, -20
